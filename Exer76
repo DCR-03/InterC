@@ -1,0 +1,54 @@
+//A program that uses a vector to store five people's weights. Calculate the total weight, the average and the max weight.
+// Assignment 7.6
+// April 5, 2022
+//Dominick Rangel and Lesly Romero
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int main() {
+//variable declaration
+const double numVal = 5;
+vector<double> weight(numVal);
+int i;
+double total;
+double temp;
+double average;
+double max = 0;
+
+//a for loop that takes the user's input for the weight of each user
+for (i = 0; i < weight.size(); i++) {
+  cout << "Enter weight " << i+1 << ": ";
+  cin >> weight.at(i);
+   }
+cout << endl;
+//displaying the output of the user's input
+cout << "You entered:";
+for (i = 0; i < weight.size(); i++) {
+      cout << fixed << setprecision(2) << weight.at(i) << " ";
+   }
+cout << "\n" << endl;
+//Calculating the total weight of all of the people
+for (i = 0; i < weight.size(); i++) {
+      total +=weight.at(i);
+
+   }
+//displaying both the total weight and the average weight after calculating the average
+cout << "Total weight: " << fixed << setprecision(2) << total << endl;
+average = total/numVal;
+cout << "Average weight: " << fixed << setprecision(2) << average << endl;
+
+//Running a for loop to iterate through each of the person's weight and determining which one is the highest/max
+for(i = 0; i < weight.size(); i++){
+  if(max < weight[i]){
+    max = weight[i];
+  }
+  else{
+    continue;
+  }
+}
+//displaying the max weight :D
+cout << "Max weight: " << fixed << setprecision(2) << max << endl;
+  return 0;
+  }
