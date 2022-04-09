@@ -1,0 +1,43 @@
+//A program that displays a shipping charge based on the number of items ordered by the customer.
+// Assignment 7.5 
+// April 5, 2022
+//Dominick Rangel and Lesly Romero
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+// Create input for customer order 
+int userOrder = 1;
+  // two dimensional array with min order, max order, and charge 
+int shippingCharge [5][3] = {
+       {1,50,20},
+       {51,100,15},
+       {101,200,10},
+       {201,500,5},
+       {501,999999,0}
+       };
+  // loop that runs until user inputs 0 or negative numbers 
+while (userOrder > 0){
+cout << "\nNumber ordered (negative number or 0 to end): ";
+cin >> userOrder;
+  // if statements to obtain correct shipping cost
+if (userOrder > shippingCharge[4][0]){
+  cout << "Shipping charge for a quantity of " << userOrder << " is $" << shippingCharge[4][2] << endl;
+}
+else if (userOrder > shippingCharge[3][0]){
+  cout << "Shipping charge for a quantity of " << userOrder << " is $" << shippingCharge[3][2] << endl;
+}
+else if (userOrder > shippingCharge[2][0]){
+  cout << "Shipping charge for a quantity of " << userOrder << " is $" << shippingCharge[2][2] << endl;
+}
+else if (userOrder > shippingCharge[1][0]){
+  cout << "Shipping charge for a quantity of " << userOrder << " is $" << shippingCharge[1][2] << endl;
+}
+else if (userOrder > shippingCharge[0][0]){
+  cout << "Shipping charge for a quantity of " << userOrder << " is $" << shippingCharge[0][2] << endl;
+}
+  }
+  
+  }
